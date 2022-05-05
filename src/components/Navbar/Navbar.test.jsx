@@ -1,11 +1,11 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { renderWithRouter } from "../../tests/helpers/renderWithRouter";
+import { renderTestApp } from "../../tests/helpers/renderTestApp";
 import Navbar from "./Navbar";
 
 describe("NAVBAR tests", () => {
   test("renders about link test", () => {
-    render(renderWithRouter(<Navbar />));
+    render(renderTestApp(<Navbar />));
     const aboutLink = screen.getByTestId("about-link");
 
     userEvent.click(aboutLink);
@@ -13,7 +13,7 @@ describe("NAVBAR tests", () => {
   });
 
   test("renders main link test", () => {
-    render(renderWithRouter(<Navbar />));
+    render(renderTestApp(<Navbar />));
     const mainLink = screen.getByTestId("main-link");
 
     userEvent.click(mainLink);
@@ -21,7 +21,7 @@ describe("NAVBAR tests", () => {
   });
 
   test("renders users link test", () => {
-    render(renderWithRouter(<Navbar />));
+    render(renderTestApp(<Navbar />));
     const usersLink = screen.getByTestId("users-link");
 
     userEvent.click(usersLink);
