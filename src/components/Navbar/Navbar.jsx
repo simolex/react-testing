@@ -8,10 +8,16 @@ const Navbar = () => {
         main
       </Link>
       <Link to="/about" data-testid="about-link">
-        about
+        About
       </Link>
       <Link to="/users" data-testid="users-link">
-        users
+        Users
+      </Link>
+      <Link to="/hello" data-testid="hello-link">
+        Hello
+      </Link>
+      <Link to="/user-test" data-testid="ut-link">
+        UFT
       </Link>
     </div>
   );
