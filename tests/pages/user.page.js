@@ -31,7 +31,7 @@ class UsersPage extends Page {
       }
 
       await this.usersItems[0].$("#user-delete").click();
-      await this.usersItems[0].$("#user-delete").click();
+      //await this.usersItems[0].$("#user-delete").click();
 
       const usersCountAfterDelete = await this.usersItems.length;
       result = usersCount - usersCountAfterDelete;
