@@ -2,7 +2,7 @@ import React from "react";
 
 const User = ({ user, onDelete }) => {
   return (
-    <div>
+    <div id="user-line">
       {user.name}
       <button id="user-delete" onClick={() => onDelete(user.id)}>
         delete

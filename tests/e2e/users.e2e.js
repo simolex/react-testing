@@ -1,14 +1,14 @@
 const UsersPage = require("../pages/user.page");
-var should = require("chai").should();
 
 describe("My testing user page ", () => {
   it("Should be list users", async () => {
-    await UsersPage.loadData();
+    const err = await UsersPage.loadData().catch((error) => error);
+    expect(err?.message).toBeUndefined();
   });
 
   it("Should be deleted user", async () => {
     await UsersPage.loadData();
-    const res = await UsersPage.deleteUser();
-    res.should.equal(true);
+    const err = await UsersPage.deleteUser().catch((error) => error);
+    expect(err?.message).toBeUndefined();
   });
 });

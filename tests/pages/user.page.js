@@ -5,11 +5,11 @@ class UsersPage extends Page {
     return $("#is-loading");
   }
   get usersList() {
-    return $("#iusers-list");
+    return $("#users-list");
   }
 
   get usersItems() {
-    return browser.react$$("User");
+    return $$("#user-line");
   }
 
   async loadData() {
@@ -20,10 +20,10 @@ class UsersPage extends Page {
     } catch (err) {
       return new Error("Не удалось загрузить пользователей");
     }
-    return true;
   }
 
   async deleteUser() {
+    let result;
     try {
       const usersCount = await this.usersItems.length;
       if (!usersCount) {
@@ -31,11 +31,10 @@ class UsersPage extends Page {
       }
 
       await this.usersItems[0].$("#user-delete").click();
-      await this.usersItems[2].$("#user-delete").click();
+      await this.usersItems[0].$("#user-delete").click();
 
-      //await this.usersItems[1].$("#user-delete").click();
       const usersCountAfterDelete = await this.usersItems.length;
-      const result = usersCount - usersCountAfterDelete;
+      result = usersCount - usersCountAfterDelete;
 
       if (result !== 1) {
         throw Error("Удалилось больше  или меньше одного пользователя");
@@ -43,7 +42,6 @@ class UsersPage extends Page {
     } catch (err) {
       return new Error("Не удалось удалить пользователя " + err.message);
     }
-    return true;
   }
   open() {
     return super.open("user-test");
