@@ -15,8 +15,8 @@ class UsersPage extends Page {
   async loadData() {
     try {
       await this.open();
-      await this.loadingTitle.waitForDisplayed({ timeout: 5000 });
-      await this.usersList.waitForDisplayed({ timeout: 5000 });
+      await this.loadingTitle.waitForDisplayed({ timeout: 100000 });
+      await this.usersList.waitForDisplayed({ timeout: 100000 });
     } catch (err) {
       return new Error("Не удалось загрузить пользователей");
     }
